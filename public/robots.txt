@@ -1,0 +1,31 @@
+# Maxim Plus — robots.txt
+# https://www.maximpluss.com
+
+User-agent: *
+Allow: /
+
+# Block internal/generated paths
+Disallow: /api/
+Disallow: /*.json$
+
+# Allow important crawlers explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Sitemap
+Sitemap: https://www.maximpluss.com/sitemap.xml

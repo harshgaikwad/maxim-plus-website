@@ -1,0 +1,181 @@
+/* ── NAVBAR ─────────────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  transition: background var(--dur-mid) var(--ease),
+              box-shadow var(--dur-mid) var(--ease),
+              padding var(--dur-mid) var(--ease);
+  padding-block: 1.25rem;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 31, 63, 0);
+  backdrop-filter: blur(0px);
+  transition: background var(--dur-mid) var(--ease),
+              backdrop-filter var(--dur-mid) var(--ease);
+  z-index: -1;
+}
+
+.navbar--scrolled {
+  padding-block: .75rem;
+  box-shadow: 0 2px 24px rgba(0,0,0,.18);
+}
+.navbar--scrolled::before {
+  background: rgba(11, 31, 63, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); /* Safari / iOS */
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ── Logo ── */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar__logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: screen;
+  transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+
+.navbar__logo:hover .navbar__logo-img {
+  opacity: .9;
+  transform: scale(1.03);
+}
+
+/* ── Nav Links ── */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+}
+
+.navbar__link {
+  position: relative;
+  padding: .5rem .85rem;
+  font-size: .9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.82);
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast) var(--ease),
+              background var(--dur-fast) var(--ease);
+  white-space: nowrap;
+}
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--mp-orange);
+  border-radius: 1px;
+  transform: translateX(-50%);
+  transition: width var(--dur-mid) var(--ease);
+}
+.navbar__link:hover {
+  color: #fff;
+  background: rgba(255,255,255,.06);
+}
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: calc(100% - 1.7rem);
+}
+.navbar__link--active {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Hamburger ── */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  /* 44x44 minimum touch target (Apple HIG / WCAG) */
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  transition: background var(--dur-fast) var(--ease);
+}
+.navbar__hamburger:hover { background: rgba(255,255,255,.1); }
+.navbar__hamburger span {
+  display: block;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+  transition: all var(--dur-mid) var(--ease);
+  transform-origin: center;
+}
+.navbar__hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__hamburger--open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.navbar__hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile Drawer ── */
+.navbar__drawer {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(320px, 85vw);
+  background: var(--mp-navy-dark);
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform var(--dur-mid) var(--ease);
+  padding: 5rem 1.5rem 2rem;
+  box-shadow: -4px 0 40px rgba(0,0,0,.25);
+}
+.navbar__drawer--open { transform: translateX(0); }
+
+.navbar__drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.navbar__drawer-link {
+  display: block;
+  padding: .85rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.8);
+  border-radius: var(--radius-md);
+  transition: background var(--dur-fast), color var(--dur-fast);
+  border-left: 3px solid transparent;
+}
+.navbar__drawer-link:hover { background: rgba(255,255,255,.06); color: #fff; }
+.navbar__drawer-link--active {
+  background: rgba(242,101,34,.12);
+  color: var(--mp-orange-light);
+  border-left-color: var(--mp-orange);
+  font-weight: 600;
+}
+
+.navbar__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 998;
+  backdrop-filter: blur(2px);
+}
+
+@media (max-width: 1024px) {
+  .navbar__hamburger { display: flex; }
+  .navbar__nav, .navbar__nav + .btn { display: none !important; }
+}

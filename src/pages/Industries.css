@@ -1,0 +1,61 @@
+.industries-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.industry-card {
+  background: #fff;
+  border: 1.5px solid var(--mid-gray);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  transition: all var(--dur-mid) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.industry-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--ind-color);
+  transform: scaleX(0);
+  transition: transform var(--dur-mid);
+}
+.industry-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: rgba(0,0,0,.08); }
+.industry-card:hover::after { transform: scaleX(1); }
+.industry-card__icon { font-size: 2.25rem; line-height: 1; }
+.industry-card__name { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; color: var(--mp-navy); line-height: 1.2; }
+.industry-card__desc { font-size: .85rem; color: var(--text-muted); line-height: 1.65; flex: 1; }
+.industry-card__link { font-size: .8rem; font-weight: 700; color: var(--mp-orange); margin-top: .5rem; transition: color var(--dur-fast); }
+.industry-card__link:hover { color: var(--mp-orange-dark); }
+
+.ecosystem-grid {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.ecosystem-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  padding: 1.75rem 2rem;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius-lg);
+  color: #fff;
+  font-weight: 600;
+  font-size: .95rem;
+  text-align: center;
+  transition: all var(--dur-mid) var(--ease);
+  backdrop-filter: blur(8px);
+}
+.ecosystem-card:hover { background: rgba(242,101,34,.15); border-color: var(--mp-orange); transform: translateY(-4px); }
+
+@media (max-width: 1024px) { .industries-detail-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .industries-detail-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .industries-detail-grid { grid-template-columns: 1fr; } }
