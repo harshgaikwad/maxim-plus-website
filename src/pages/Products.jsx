@@ -187,7 +187,7 @@ function ProductCard({ product, index, divisionColors }) {
     'cs-01', 'cs-02', 'cs-03', 'cs-04', 'cs-05', 'cs-06', 'cs-07', 'cs-08', 'cs-09', 'cs-10',
     'fs-02', 'fs-06', 'fs-08', 'fs-09', 'fs-10', 'fs-11', 'fs-13', 'fs-14', 'fs-15',
     'rs-01', 'rs-03', 'rs-04', 'rs-05',
-    'cl-01', 'cl-02', 'cl-03', 'cl-04', 'cl-06', 'cl-07', 'cl-08', 'cl-09', 'cl-10', 'cl-11', 'cl-13', 'cl-14', 'cl-16', 'cl-19', 'cl-20', 'cl-23', 'cl-25'
+    'cl-01', 'cl-02', 'cl-03', 'cl-04', 'cl-06', 'cl-07', 'cl-08', 'cl-09', 'cl-10', 'cl-11', 'cl-13', 'cl-14', 'cl-15', 'cl-16', 'cl-17', 'cl-18', 'cl-19', 'cl-20', 'cl-21', 'cl-22', 'cl-23', 'cl-25'
   ]
 
   let imageSrc = division?.image
@@ -197,6 +197,8 @@ function ProductCard({ product, index, divisionColors }) {
     imageSrc = '/products/prod_fs_02.webp'
   } else if (product.id === 'fs-12') {
     imageSrc = '/products/prod_fs_11.webp'
+  } else if (product.id === 'cl-12') {
+    imageSrc = '/products/prod_cl_03.webp'
   }
 
   return (
