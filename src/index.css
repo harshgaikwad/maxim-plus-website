@@ -425,3 +425,33 @@ a { -webkit-tap-highlight-color: transparent; }
     transition-duration: .01ms !important;
   }
 }
+
+/* ── 404 PAGE ── */
+.not-found-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  gap: 1rem;
+  padding-top: 5rem;
+}
+
+.not-found-icon {
+  font-size: 5rem;
+}
+
+.not-found-title {
+  color: var(--mp-navy);
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.not-found-desc {
+  color: var(--text-muted);
+}
+
+.not-found-btn {
+  margin-top: .5rem;
+}

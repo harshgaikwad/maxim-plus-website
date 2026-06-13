@@ -1,13 +1,32 @@
-import { useState, useMemo } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useMemo, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { products, divisions } from '../data/products'
 import SEO from '../components/SEO'
 import './Products.css'
 
+const generatedImageIds = [
+  'ppe-01', 'ppe-02', 'ppe-03', 'ppe-04', 'ppe-05', 'ppe-06', 'ppe-07', 'ppe-08', 'ppe-09', 'ppe-10',
+  'ppe-11', 'ppe-12', 'ppe-13', 'ppe-14', 'ppe-15', 'ppe-16', 'ppe-17', 'ppe-18', 'ppe-19', 'ppe-20',
+  'wipe-01', 'wipe-02', 'wipe-03', 'wipe-04', 'wipe-05', 'wipe-06', 'wipe-07',
+  'cs-01', 'cs-02', 'cs-03', 'cs-04', 'cs-05', 'cs-06', 'cs-07', 'cs-08', 'cs-09', 'cs-10',
+  'fs-02', 'fs-06', 'fs-08', 'fs-09', 'fs-10', 'fs-11', 'fs-13', 'fs-14', 'fs-15',
+  'rs-01', 'rs-03', 'rs-04', 'rs-05',
+  'cl-01', 'cl-02', 'cl-03', 'cl-04', 'cl-06', 'cl-07', 'cl-08', 'cl-09', 'cl-10', 'cl-11', 'cl-13', 'cl-14', 'cl-15', 'cl-16', 'cl-17', 'cl-18', 'cl-19', 'cl-20', 'cl-21', 'cl-22', 'cl-23', 'cl-25'
+]
+
 export default function Products() {
+  const location = useLocation()
   const [activeDiv, setActiveDiv] = useState('all')
   const [search, setSearch]       = useState('')
   const [activeCategory, setActiveCategory] = useState('all')
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    const divParam = params.get('div')
+    if (divParam && divisions.find(d => d.id === divParam)) {
+      setActiveDiv(divParam)
+    }
+  }, [location.search])
 
   const filtered = useMemo(() => {
     let p = products
@@ -177,18 +196,9 @@ export default function Products() {
 
 function ProductCard({ product, index, divisionColors }) {
   const [showDetail, setShowDetail] = useState(false)
+  const [imgLoaded, setImgLoaded] = useState(false)
   const color = divisionColors[product.division] || '#0B1F3F'
   const division = divisions.find(d => d.id === product.division)
-
-  const generatedImageIds = [
-    'ppe-01', 'ppe-02', 'ppe-03', 'ppe-04', 'ppe-05', 'ppe-06', 'ppe-07', 'ppe-08', 'ppe-09', 'ppe-10',
-    'ppe-11', 'ppe-12', 'ppe-13', 'ppe-14', 'ppe-15', 'ppe-16', 'ppe-17', 'ppe-18', 'ppe-19', 'ppe-20',
-    'wipe-01', 'wipe-02', 'wipe-03', 'wipe-04', 'wipe-05', 'wipe-06', 'wipe-07',
-    'cs-01', 'cs-02', 'cs-03', 'cs-04', 'cs-05', 'cs-06', 'cs-07', 'cs-08', 'cs-09', 'cs-10',
-    'fs-02', 'fs-06', 'fs-08', 'fs-09', 'fs-10', 'fs-11', 'fs-13', 'fs-14', 'fs-15',
-    'rs-01', 'rs-03', 'rs-04', 'rs-05',
-    'cl-01', 'cl-02', 'cl-03', 'cl-04', 'cl-06', 'cl-07', 'cl-08', 'cl-09', 'cl-10', 'cl-11', 'cl-13', 'cl-14', 'cl-15', 'cl-16', 'cl-17', 'cl-18', 'cl-19', 'cl-20', 'cl-21', 'cl-22', 'cl-23', 'cl-25'
-  ]
 
   let imageSrc = division?.image
   if (generatedImageIds.includes(product.id)) {
@@ -207,7 +217,13 @@ function ProductCard({ product, index, divisionColors }) {
       style={{ animationDelay: `${Math.min(index, 8) * 0.07}s`, '--card-color': color }}
     >
       <div className="product-card__image-wrapper">
-        <img src={imageSrc} alt={product.category} className="product-card__image" loading="lazy" />
+        <img 
+          src={imageSrc} 
+          alt={product.name} 
+          className={`product-card__image ${imgLoaded ? 'loaded' : 'loading'}`} 
+          loading="lazy" 
+          onLoad={() => setImgLoaded(true)}
+        />
         <span className="product-card__cat badge"
           style={{ background: `${color}f0`, color: '#fff' }}
         >

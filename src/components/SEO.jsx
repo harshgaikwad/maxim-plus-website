@@ -7,14 +7,14 @@ import { Helmet } from 'react-helmet-async'
 
 const SITE_URL  = 'https://www.maximpluss.com'
 const SITE_NAME = 'Maxim Plus'
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`
+const DEFAULT_OG_IMAGE = `${SITE_URL}/maxim-og.png`
 
 /** Shared company info — used across schemas */
 const COMPANY = {
   name:        'Maxim Plus',
   alternateName: ['Maxim Plus THE EXPERT SOLUTIONS', 'Maxim Plus Pune'],
   url:         SITE_URL,
-  logo:        `${SITE_URL}/Maximplus.png`,
+  logo:        `${SITE_URL}/Maximplus.webp`,
   telephone:   ['+918623836464', '+918605418324'],
   email:       'info@maximpluss.com',
   foundingDate: '2008',

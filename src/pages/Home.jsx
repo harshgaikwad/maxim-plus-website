@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { stats } from '../data/industries'
 import { divisions } from '../data/products'
 import './Home.css'
-import maximLogo from '/Maximplus.png'
+import maximLogo from '/Maximplus.webp'
 import SEO, { organizationSchema, localBusinessSchema, websiteSchema } from '../components/SEO'
 
 /* ── Counter hook ── */

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { products } from '../data/products'
-import maximLogo from '/Maximplus.png'
+import maximLogo from '/Maximplus.webp'
 import SEO from '../components/SEO'
 import './WipingSolutions.css'
 

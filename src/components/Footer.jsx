@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import maximLogo from '/Maximplus.png'
+import maximLogo from '/Maximplus.webp'
 import './Footer.css'
 
 const footerLinks = {

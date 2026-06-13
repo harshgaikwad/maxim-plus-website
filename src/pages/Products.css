@@ -165,7 +165,23 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--dur-mid) var(--ease);
+  transition: transform var(--dur-mid) var(--ease), opacity 0.3s ease;
+}
+
+.product-card__image.loading {
+  opacity: 0;
+  animation: pulse 1.5s infinite;
+  background-color: #e2e8f0;
+}
+
+.product-card__image.loaded {
+  opacity: 1;
+}
+
+@keyframes pulse {
+  0% { background-color: #e2e8f0; }
+  50% { background-color: #cbd5e1; }
+  100% { background-color: #e2e8f0; }
 }
 
 .product-card:hover .product-card__image {

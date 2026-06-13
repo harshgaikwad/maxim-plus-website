@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import maximLogo from '/Maximplus.png'
+import maximLogo from '/Maximplus.webp'
 import './Navbar.css'
 
 const navLinks = [
