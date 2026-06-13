@@ -184,7 +184,8 @@ function ProductCard({ product, index, divisionColors }) {
     'ppe-01', 'ppe-02', 'ppe-03', 'ppe-04', 'ppe-05', 'ppe-06', 'ppe-07', 'ppe-08', 'ppe-09', 'ppe-10',
     'ppe-11', 'ppe-12', 'ppe-13', 'ppe-14', 'ppe-15', 'ppe-16', 'ppe-17', 'ppe-18', 'ppe-19', 'ppe-20',
     'wipe-01', 'wipe-02', 'wipe-03', 'wipe-04', 'wipe-05', 'wipe-06', 'wipe-07',
-    'cs-01'
+    'cs-01', 'cs-02', 'cs-03', 'cs-04', 'cs-05', 'cs-06', 'cs-07', 'cs-08', 'cs-09', 'cs-10',
+    'fs-01', 'fs-02', 'fs-03', 'fs-04', 'fs-05', 'fs-06', 'fs-07', 'fs-08'
   ]
 
   const hasSpecificImage = generatedImageIds.includes(product.id)
