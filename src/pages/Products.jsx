@@ -185,18 +185,14 @@ function ProductCard({ product, index, divisionColors }) {
     'ppe-11', 'ppe-12', 'ppe-13', 'ppe-14', 'ppe-15', 'ppe-16', 'ppe-17', 'ppe-18', 'ppe-19', 'ppe-20',
     'wipe-01', 'wipe-02', 'wipe-03', 'wipe-04', 'wipe-05', 'wipe-06', 'wipe-07',
     'cs-01', 'cs-02', 'cs-03', 'cs-04', 'cs-05', 'cs-06', 'cs-07', 'cs-08', 'cs-09', 'cs-10',
-    'fs-02', 'fs-06', 'fs-07', 'fs-08', 'fs-09', 'fs-10', 'fs-11', 'fs-12', 'fs-13', 'fs-14', 'fs-15',
-    'rs-01', 'rs-02', 'rs-03', 'rs-04', 'rs-05', 'rs-06',
-    'cl-01', 'cl-02', 'cl-03', 'cl-04', 'cl-05', 'cl-06', 'cl-07', 'cl-08', 'cl-09', 'cl-10', 'cl-11', 'cl-12', 'cl-13', 'cl-26'
+    'fs-06', 'fs-08', 'fs-09', 'fs-10', 'fs-11', 'fs-13', 'fs-14',
+    'rs-01', 'rs-02', 'rs-03', 'rs-04', 'rs-05',
+    'cl-01', 'cl-02', 'cl-03', 'cl-04', 'cl-06', 'cl-07', 'cl-08', 'cl-09', 'cl-10', 'cl-11', 'cl-13', 'cl-14', 'cl-16', 'cl-19', 'cl-20', 'cl-23', 'cl-25'
   ]
-
-  const sharedExtinguishers = ['fs-01', 'fs-03', 'fs-04', 'fs-05']
 
   let imageSrc = division?.image
   if (generatedImageIds.includes(product.id)) {
     imageSrc = `/products/prod_${product.id.replace('-', '_')}.webp`
-  } else if (sharedExtinguishers.includes(product.id)) {
-    imageSrc = `/products/prod_fs_02.webp`
   }
 
   return (
