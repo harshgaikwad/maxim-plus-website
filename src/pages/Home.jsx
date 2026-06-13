@@ -160,7 +160,7 @@ export default function Home() {
       <SEO
         title="Maxim Plus — THE EXPERT SOLUTIONS™ | Pune Safety Products"
         description="Maxim Plus — Pune's leading manufacturer & supplier of protective clothing, PPE kits, construction safety, fire safety & industrial wipes. Serving 100+ clients across Maharashtra."
-        keywords="Maxim Plus, PPE supplier Pune, safety equipment manufacturer Maharashtra, protective clothing Pune, personal protective equipment Pune, construction safety products, industrial wipes, lint free wipes"
+        keywords="Maxim Plus, PPE supplier Pune, safety equipment manufacturer Maharashtra, protective clothing Pune, personal protective equipment Pune, construction safety products, industrial wipes, lint free wipes, Sai Industries"
         canonicalPath="/"
         breadcrumbs={[{ name: 'Home', path: '/' }]}
         schemas={[organizationSchema(), localBusinessSchema(), websiteSchema()]}

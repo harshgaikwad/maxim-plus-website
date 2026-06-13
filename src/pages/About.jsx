@@ -38,7 +38,7 @@ export default function About() {
       <SEO
         title="About Maxim Plus — Safety Products Manufacturer, Pune"
         description="Learn about Maxim Plus, Pune's trusted safety products and wiping solutions brand backed by SAI Industries. Serving 100+ clients across 12+ industries."
-        keywords="about Maxim Plus, safety products manufacturer Pune, PPE supplier history Maharashtra, protective clothing Pune, industrial wiping solutions Pune"
+        keywords="about Maxim Plus, safety products manufacturer Pune, PPE supplier history Maharashtra, protective clothing Pune, industrial wiping solutions Pune, Sai Industries"
         canonicalPath="/about"
         breadcrumbs={[
           { name: 'Home', path: '/' },

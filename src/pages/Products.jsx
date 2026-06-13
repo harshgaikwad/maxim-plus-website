@@ -71,12 +71,16 @@ export default function Products() {
     }))
   }
 
+  const baseKeywords = "PPE kits Pune, protective clothing manufacturer Maharashtra, construction safety harness Pune, fire extinguisher supplier Pune, road safety cones Maharashtra, industrial safety gloves, safety shoes supplier Pune, industrial wipes, lint free wipes"
+  const allProductKeywords = products.map(p => p.name).join(', ')
+  const dynamicKeywords = `${baseKeywords}, ${allProductKeywords}, Sai Industries`
+
   return (
     <div className="products-page">
       <SEO
         title="Safety Products Catalogue — Protective Clothing, PPE & Wipes | Pune"
         description="Browse 500+ safety products from Maxim Plus, Pune: Protective Clothing, PPE kits, fire extinguishers, construction safety harnesses, road safety cones, and industrial wipes. Best prices. Fast delivery across Maharashtra."
-        keywords="PPE kits Pune, protective clothing manufacturer Maharashtra, construction safety harness Pune, fire extinguisher supplier Pune, road safety cones Maharashtra, industrial safety gloves, safety shoes supplier Pune, industrial wipes, lint free wipes"
+        keywords={dynamicKeywords}
         canonicalPath="/products"
         breadcrumbs={[
           { name: 'Home', path: '/' },

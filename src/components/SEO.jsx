@@ -12,7 +12,7 @@ const DEFAULT_OG_IMAGE = `${SITE_URL}/maxim-og.png`
 /** Shared company info — used across schemas */
 const COMPANY = {
   name:        'Maxim Plus',
-  alternateName: ['Maxim Plus THE EXPERT SOLUTIONS', 'Maxim Plus Pune'],
+  alternateName: ['Maxim Plus THE EXPERT SOLUTIONS', 'Maxim Plus Pune', 'Sai Industries'],
   url:         SITE_URL,
   logo:        `${SITE_URL}/Maximplus.webp`,
   telephone:   ['+918623836464', '+918605418324'],
