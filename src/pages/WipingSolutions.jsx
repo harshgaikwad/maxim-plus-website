@@ -88,7 +88,7 @@ export default function WipingSolutions() {
           <div className="maxim-hero__right animate-slide-right">
             <div className="maxim-hero__visual">
               <div className="maxim-hero__circle">
-                <img src={maximLogo} alt="Maxim Plus" className="maxim-hero__logo-img" />
+                <img src="/products/cat_wipes.webp" alt="Wiping Solutions" className="maxim-hero__logo-img" style={{ objectFit: 'cover', borderRadius: '50%' }} />
               </div>
               <div className="maxim-hero__floating-tag tag--1">✓ Lint Free</div>
               <div className="maxim-hero__floating-tag tag--2">✓ 200%+ Absorption</div>

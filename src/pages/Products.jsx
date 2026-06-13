@@ -178,16 +178,17 @@ export default function Products() {
 function ProductCard({ product, index, divisionColors }) {
   const [showDetail, setShowDetail] = useState(false)
   const color = divisionColors[product.division] || '#0B1F3F'
+  const division = divisions.find(d => d.id === product.division)
 
   return (
     <div
       className="product-card animate-fade-up"
       style={{ animationDelay: `${Math.min(index, 8) * 0.07}s`, '--card-color': color }}
     >
-      <div className="product-card__header">
-        <span className="product-card__emoji">{product.emoji}</span>
+      <div className="product-card__image-wrapper">
+        <img src={division?.image} alt={product.category} className="product-card__image" loading="lazy" />
         <span className="product-card__cat badge"
-          style={{ background: `${color}18`, color }}
+          style={{ background: `${color}f0`, color: '#fff' }}
         >
           {product.category}
         </span>

@@ -67,12 +67,17 @@ function DivisionCard({ div, index }) {
 
   return (
     <Link to={to} className="division-card animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-      <div className="division-card__icon">{icons[div.id]}</div>
-      <h3 className="division-card__title">{titles[div.id]}</h3>
-      <p className="division-card__desc">{descs[div.id]}</p>
-      <span className="division-card__arrow">
-        Explore →
-      </span>
+      <div className="division-card__image-wrapper">
+        <img src={div.image} alt={titles[div.id]} className="division-card__image" loading="lazy" />
+        <div className="division-card__icon-overlay">{icons[div.id]}</div>
+      </div>
+      <div className="division-card__content">
+        <h3 className="division-card__title">{titles[div.id]}</h3>
+        <p className="division-card__desc">{descs[div.id]}</p>
+        <span className="division-card__arrow">
+          Explore →
+        </span>
+      </div>
     </Link>
   )
 }
@@ -282,7 +287,7 @@ export default function Home() {
               control, custom production capabilities, and reliable supply chains across our entire product range.
             </p>
             <div className="maxim-spotlight__features">
-              {['In-house R&D', 'Custom Sizing', 'Quality Control', 'Pan-Maharashtra Supply', 'Bulk Manufacturing'].map(f => (
+              {['In-house R&D', 'Custom Sizing', 'Quality Control', 'Pan-India Supply', 'Bulk Manufacturing'].map(f => (
                 <span key={f} className="badge badge--white">{f}</span>
               ))}
             </div>

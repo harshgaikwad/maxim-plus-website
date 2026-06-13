@@ -2,12 +2,12 @@
 // Sourced from official company catalogues
 
 export const divisions = [
-  { id: 'ppe',          label: 'PPE & Industrial',      color: '#0B1F3F', icon: '🦺' },
-  { id: 'clothing',     label: 'Protective Clothing',   color: '#8B5CF6', icon: '👔' },
-  { id: 'wipes',        label: 'Wiping Solutions',      color: '#6AAD2A', icon: '🧹' },
-  { id: 'construction', label: 'Construction Safety',   color: '#2563EB', icon: '🏗️' },
-  { id: 'fire',         label: 'Fire Safety',           color: '#DC2626', icon: '🔥' },
-  { id: 'road',         label: 'Road Safety',           color: '#D97706', icon: '🚧' },
+  { id: 'ppe',          label: 'PPE & Industrial',      color: '#0B1F3F', icon: '🦺', image: '/products/cat_ppe.webp' },
+  { id: 'clothing',     label: 'Protective Clothing',   color: '#8B5CF6', icon: '👔', image: '/products/cat_clothing.webp' },
+  { id: 'wipes',        label: 'Wiping Solutions',      color: '#6AAD2A', icon: '🧹', image: '/products/cat_wipes.webp' },
+  { id: 'construction', label: 'Construction Safety',   color: '#2563EB', icon: '🏗️', image: '/products/cat_construction.webp' },
+  { id: 'fire',         label: 'Fire Safety',           color: '#DC2626', icon: '🔥', image: '/products/cat_fire.webp' },
+  { id: 'road',         label: 'Road Safety',           color: '#D97706', icon: '🚧', image: '/products/cat_road.webp' },
 ]
 
 export const products = [
