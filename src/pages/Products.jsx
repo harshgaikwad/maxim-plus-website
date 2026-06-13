@@ -180,13 +180,25 @@ function ProductCard({ product, index, divisionColors }) {
   const color = divisionColors[product.division] || '#0B1F3F'
   const division = divisions.find(d => d.id === product.division)
 
+  const generatedImageIds = [
+    'ppe-01', 'ppe-02', 'ppe-03', 'ppe-04', 'ppe-05', 'ppe-06', 'ppe-07', 'ppe-08', 'ppe-09', 'ppe-10',
+    'ppe-11', 'ppe-12', 'ppe-13', 'ppe-14', 'ppe-15', 'ppe-16', 'ppe-17', 'ppe-18', 'ppe-19', 'ppe-20',
+    'wipe-01', 'wipe-02', 'wipe-03', 'wipe-04', 'wipe-05', 'wipe-06', 'wipe-07',
+    'cs-01'
+  ]
+
+  const hasSpecificImage = generatedImageIds.includes(product.id)
+  const imageSrc = hasSpecificImage 
+    ? `/products/prod_${product.id.replace('-', '_')}.webp` 
+    : division?.image
+
   return (
     <div
       className="product-card animate-fade-up"
       style={{ animationDelay: `${Math.min(index, 8) * 0.07}s`, '--card-color': color }}
     >
       <div className="product-card__image-wrapper">
-        <img src={division?.image} alt={product.category} className="product-card__image" loading="lazy" />
+        <img src={imageSrc} alt={product.category} className="product-card__image" loading="lazy" />
         <span className="product-card__cat badge"
           style={{ background: `${color}f0`, color: '#fff' }}
         >
