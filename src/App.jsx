@@ -3,6 +3,7 @@ import { useEffect, Suspense, lazy } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
+import SEO from './components/SEO'
 
 const Home = lazy(() => import('./pages/Home'))
 const About = lazy(() => import('./pages/About'))
@@ -35,6 +36,7 @@ export default function App() {
             {/* 404 fallback */}
             <Route path="*" element={
               <div className="not-found-page">
+                <SEO title="Page Not Found" noIndex={true} />
                 <div className="not-found-icon">🛡️</div>
                 <h1 className="not-found-title">Page Not Found</h1>
                 <p className="not-found-desc">The page you're looking for doesn't exist.</p>
