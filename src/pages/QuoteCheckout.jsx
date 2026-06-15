@@ -37,8 +37,13 @@ export default function QuoteCheckout() {
     e.preventDefault()
     setStatus('submitting')
 
-    // Format the cart items for the email
-    const cartSummary = cart.map(item => `${item.quantity}x ${item.name} (${item.category})`).join('\n')
+    // Format the cart items as an array of objects. 
+    // Web3Forms will automatically detect this array and render it as a beautiful HTML table!
+    const cartTableData = cart.map(item => ({
+      "Product Name": item.name,
+      "Category": item.category,
+      "Quantity": `${item.quantity} units`
+    }))
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -48,16 +53,16 @@ export default function QuoteCheckout() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'c41a0dfb-85cf-4f5b-a791-ee92f47e46ba',
+          access_key: 'YOUR_NEW_ACCESS_KEY_HERE', // Waiting for you to paste the key!
           subject: `New Bulk Quote Request from ${formData.company}`,
           from_name: formData.name,
-          Name: formData.name,
-          Company: formData.company,
-          Phone: formData.phone,
-          Address: formData.address,
-          Location: formData.location,
-          Date_Required: formData.dateRequired,
-          Products_Requested: cartSummary,
+          "Contact Name": formData.name,
+          "Company": formData.company,
+          "Phone": formData.phone,
+          "Delivery Address": formData.address,
+          "City / Location": formData.location,
+          "Required By Date": formData.dateRequired,
+          "Products Requested": cartTableData,
         })
       })
 
