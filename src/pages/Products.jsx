@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useQuoteCart } from '../context/QuoteCartContext'
 import { products, divisions } from '../data/products'
 import SEO from '../components/SEO'
 import './Products.css'
@@ -199,6 +200,7 @@ export default function Products() {
 }
 
 function ProductCard({ product, index, divisionColors }) {
+  const { addToCart } = useQuoteCart()
   const [showDetail, setShowDetail] = useState(false)
   const [imgLoaded, setImgLoaded] = useState(false)
   const color = divisionColors[product.division] || '#0B1F3F'
@@ -258,12 +260,12 @@ function ProductCard({ product, index, divisionColors }) {
       )}
 
       <div className="product-card__footer">
-        <Link
-          to={`/contact?product=${encodeURIComponent(product.name)}`}
+        <button
+          onClick={() => addToCart(product)}
           className="btn btn--primary btn--sm"
         >
-          Request Quote
-        </Link>
+          Add to Quote Cart
+        </button>
         <a href="tel:+918623836464" className="btn btn--outline-navy btn--sm">
           📞 Call
         </a>

@@ -4,6 +4,9 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 import SEO from './components/SEO'
+import FloatingCart from './components/FloatingCart'
+import CartDrawer from './components/CartDrawer'
+import { useQuoteCart } from './context/QuoteCartContext'
 
 const Home = lazy(() => import('./pages/Home'))
 const About = lazy(() => import('./pages/About'))
@@ -11,6 +14,7 @@ const Products = lazy(() => import('./pages/Products'))
 const WipingSolutions = lazy(() => import('./pages/WipingSolutions'))
 const Industries = lazy(() => import('./pages/Industries'))
 const Contact = lazy(() => import('./pages/Contact'))
+const QuoteCheckout = lazy(() => import('./pages/QuoteCheckout'))
 
 // Scroll to top on navigation
 function ScrollToTop() {
@@ -20,8 +24,15 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const { toastMessage } = useQuoteCart()
+
   return (
     <>
+      {toastMessage && (
+        <div className="toast-notification">
+          ✓ {toastMessage}
+        </div>
+      )}
       <ScrollToTop />
       <Navbar />
       <main>
@@ -33,6 +44,7 @@ export default function App() {
             <Route path="/wiping-solutions" element={<WipingSolutions />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/contact"    element={<Contact />} />
+            <Route path="/quote-request" element={<QuoteCheckout />} />
             {/* 404 fallback */}
             <Route path="*" element={
               <div className="not-found-page">
@@ -48,6 +60,8 @@ export default function App() {
       </main>
       <Footer />
       <BackToTop />
+      <FloatingCart />
+      <CartDrawer />
     </>
   )
 }
