@@ -48,7 +48,7 @@ export default function QuoteCheckout() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // TO BE REPLACED
+          access_key: 'c41a0dfb-85cf-4f5b-a791-ee92f47e46ba',
           subject: `New Bulk Quote Request from ${formData.company}`,
           from_name: formData.name,
           Name: formData.name,
