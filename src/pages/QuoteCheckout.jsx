@@ -53,7 +53,7 @@ export default function QuoteCheckout() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'YOUR_NEW_ACCESS_KEY_HERE', // Waiting for you to paste the key!
+          access_key: '11672192-37d3-4141-a148-6d7d9ccfdef9',
           subject: `New Bulk Quote Request from ${formData.company}`,
           from_name: formData.name,
           "Contact Name": formData.name,
