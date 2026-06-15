@@ -37,13 +37,14 @@ export default function QuoteCheckout() {
     e.preventDefault()
     setStatus('submitting')
 
-    // Format the cart items as an array of objects. 
-    // Web3Forms will automatically detect this array and render it as a beautiful HTML table!
-    const cartTableData = cart.map(item => ({
-      "Product Name": item.name,
-      "Category": item.category,
-      "Quantity": `${item.quantity} units`
-    }))
+    // Format the cart items into a beautiful, readable text block 
+    // since Web3Forms free tier converts JS objects to [object Object]
+    const formattedProducts = cart.map((item, index) => (
+      `ITEM ${index + 1}: ${item.name}\n` +
+      `CATEGORY: ${item.category}\n` +
+      `QUANTITY: ${item.quantity} units\n` +
+      `--------------------------------------------------`
+    )).join('\n\n')
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -62,7 +63,7 @@ export default function QuoteCheckout() {
           "Delivery Address": formData.address,
           "City / Location": formData.location,
           "Required By Date": formData.dateRequired,
-          "Products Requested": cartTableData,
+          "Products Requested": `\n--------------------------------------------------\n${formattedProducts}`,
         })
       })
 
