@@ -476,3 +476,25 @@ a { -webkit-tap-highlight-color: transparent; }
   from { top: -3rem; opacity: 0; }
   to { top: 2rem; opacity: 1; }
 }
+
+/* ── SHARED PAGE HERO ── */
+.page-hero {
+  background: linear-gradient(135deg, var(--mp-navy-dark) 0%, var(--mp-navy) 60%, var(--mp-navy-light) 100%);
+  padding-top: 9rem;
+  padding-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 60px;
+  background: var(--white);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+@media (max-width: 768px) {
+  .page-hero { padding-top: 7rem; padding-bottom: 3rem; }
+  .page-hero::after { height: 40px; }
+}
