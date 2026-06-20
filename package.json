@@ -27,6 +27,10 @@
     "vite": "^8.0.16"
   },
   "reactSnap": {
-    "source": "dist"
+    "source": "dist",
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   }
 }
