@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "node -e \"process.env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD='false'; require('puppeteer/install.js');\" && react-snap",
     "preview": "vite preview"
   },
   "keywords": [],
@@ -22,8 +21,6 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.2",
     "esbuild": "^0.28.1",
-    "puppeteer": "1.20.0",
-    "react-snap": "^1.23.0",
     "sharp": "^0.35.1",
     "vite": "^8.0.16"
   },

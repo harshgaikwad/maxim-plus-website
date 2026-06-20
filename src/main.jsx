@@ -6,10 +6,7 @@ import { QuoteCartProvider } from './context/QuoteCartContext'
 import App from './App'
 import './index.css'
 
-import { hydrateRoot, createRoot } from 'react-dom/client'
-
-const rootElement = document.getElementById('root')
-const app = (
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
       <QuoteCartProvider>
@@ -20,9 +17,3 @@ const app = (
     </HelmetProvider>
   </React.StrictMode>
 )
-
-if (rootElement.hasChildNodes()) {
-  hydrateRoot(rootElement, app)
-} else {
-  createRoot(rootElement).render(app)
-}
