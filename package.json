@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "react-snap",
     "preview": "vite preview"
   },
   "keywords": [],
@@ -21,7 +22,11 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.2",
     "esbuild": "^0.28.1",
+    "react-snap": "^1.23.0",
     "sharp": "^0.35.1",
     "vite": "^8.0.16"
+  },
+  "reactSnap": {
+    "source": "dist"
   }
 }

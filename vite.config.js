@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [react()],
 
   build: {
+    target: 'es2015',
     // ── Code splitting for better LCP / TTI ──────────────────────
     rollupOptions: {
       output: {

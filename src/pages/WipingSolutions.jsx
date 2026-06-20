@@ -137,6 +137,29 @@ export default function WipingSolutions() {
         </div>
       </section>
 
+      {/* ── SEO Content Section ── */}
+      <section className="section section--light" style={{ paddingBottom: '0' }}>
+        <div className="container">
+          <div className="seo-content-block" style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <h2 className="heading-display heading-md" style={{ color: 'var(--mp-navy-dark)', marginBottom: '1rem' }}>
+              Why Choose Maxim Plus Industrial Wiping Solutions?
+            </h2>
+            <p style={{ color: 'var(--text-color)', lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.05rem' }}>
+              In high-precision manufacturing, ordinary rags and standard cloth are simply not enough. Contamination from loose lint, dust, or silicone binders can ruin an entire production batch, especially in the <strong>Automotive, Aerospace, Pharmaceutical, and Electronics</strong> industries. That is why <strong>Maxim Plus</strong> engineers premium, specialized industrial wiping solutions designed specifically to protect your sensitive equipment and ensure flawless finishing.
+            </p>
+            <h3 className="heading-display" style={{ color: 'var(--mp-navy)', marginBottom: '0.75rem', fontSize: '1.4rem' }}>
+              Advanced Materials & Unmatched Absorbency
+            </h3>
+            <p style={{ color: 'var(--text-color)', lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.05rem' }}>
+              Our wiping products—including <strong>Polyester Continuous Monofilament Fibre Wipes, Microfibre Cloths, Poly-Cellulose Cleanroom Wipes, and Tack Rags</strong>—are manufactured using state-of-the-art laser cutting and sealed edge technology. This guarantees a 100% lint-free surface. With an absorption capacity exceeding 200% of their own weight, our hydrophilic wipes instantly pick up water, solvents, oils, and chemical spills faster than traditional materials. 
+            </p>
+            <p style={{ color: 'var(--text-color)', lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.05rem' }}>
+              Furthermore, every Maxim Plus wiping solution is strictly <strong>binder-free and silicone-free</strong>. Whether you are prepping a car body in a paint shop, maintaining optical glass, or sterilizing an R&D laboratory surface, our wipes leave absolutely zero wiping marks, residue, or chemical contamination behind.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── Features ── */}
       <section className="section section--light">
         <div className="container">

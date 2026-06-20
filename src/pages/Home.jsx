@@ -247,6 +247,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ══════════ SEO INTRO ══════════ */}
+      <section className="section" style={{ paddingBottom: '0' }}>
+        <div className="container">
+          <div className="seo-intro" style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+            <h2 className="heading-display heading-md" style={{ color: 'var(--mp-navy)', marginBottom: '1rem' }}>
+              Pune's Leading Manufacturer of Industrial Safety & Wiping Solutions
+            </h2>
+            <p style={{ color: 'var(--text-color)', fontSize: '1.05rem', lineHeight: 1.8 }}>
+              For over 15 years, <strong>Sai Industries</strong> (under the brand <strong>Maxim Plus</strong>) has been the trusted backbone for manufacturing, automotive, and pharmaceutical companies across Maharashtra. We don't just supply equipment; we manufacture highly specialized <strong>Personal Protective Equipment (PPE), Construction Safety Gear, Fire Safety Products, and Premium Industrial Wiping Solutions</strong>. Our mission is to keep your workforce safe and your production lines completely contamination-free.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ══════════ DIVISIONS ══════════ */}
       <section className="section">
         <div className="container">
